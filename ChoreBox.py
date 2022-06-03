@@ -77,21 +77,23 @@ if __name__ == "__main__":
 
     time.sleep(0.05)
 
+    FoodButton_1.when_pressed = FoodLED_1.toggle
+    FoodButton_2.when_pressed = FoodLED_2.toggle
+    WalkButton_1.when_pressed = WalkLED_1.toggle
+    WalkButton_2.when_pressed = WalkLED_2.toggle
+
     for i in range(10):
         FoodLED_1.toggle()
         FoodLED_2.toggle()
         WalkLED_1.toggle()
         WalkLED_2.toggle()
         time.sleep(0.5)
-    
+
+
     while True:
         toMidnight = time_until_end_of_day().seconds
         print("Seconds to midnight are: " + str(toMidnight))
 
-        FoodButton_1.when_pressed = FoodLED_1.toggle
-        FoodButton_2.when_pressed = FoodLED_2.toggle
-        WalkButton_1.when_pressed = WalkLED_1.toggle
-        WalkButton_2.when_pressed = WalkLED_2.toggle
 
         time.sleep(toMidnight)
 
